@@ -37,7 +37,13 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/Kayak.dae")!
+        
+        let spout = scene.rootNode.childNode(withName: "Spout-0", recursively: true)!
        
+        let particleSystem = SCNParticleSystem(named: "Spout.scnp", inDirectory: "art.scnassets")!
+        particleSystem.emitterShape = spout.geometry
+        spout.addParticleSystem(particleSystem)
+        
         let seagull = SCNScene(named: "art.scnassets/Seagull.dae")!.rootNode
         let seagullParent = SCNNode()
         
@@ -45,8 +51,8 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
         
         seagullParent.addChildNode(seagull)
         
-        seagullParent.simdPosition = float3(-1, 1, -1)
-        seagull.simdPosition = float3(0, 0, 1)
+        seagullParent.simdPosition = float3(1, 1, -1)
+        seagull.simdPosition = float3(1, 0, 1)
         
         let rotationAction = SCNAction.rotate(by: -CGFloat.pi*2, around: SCNVector3(0, 1, 0), duration: 5)
         let rotateForever = SCNAction.repeatForever(rotationAction)
@@ -62,7 +68,7 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
         scene.rootNode.addAudioPlayer(audioPlayer1)
         
         let musicSound = SCNAudioSource(fileNamed: "art.scnassets/Music.wav")!
-        oceanSound.loops = true
+        musicSound.loops = true
         let audioPlayer2 = SCNAudioPlayer(source: musicSound)
         scene.rootNode.addAudioPlayer(audioPlayer2)
         

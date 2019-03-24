@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F06BD172248129F00138AE0 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06BD152248129F00138AE0 /* smoke.png */; };
+		4F5E6F9E2248146100C8C7C5 /* Spout.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E6F9D2248146100C8C7C5 /* Spout.scnp */; };
 		4F93FCC52244712F0015C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93FCC42244712F0015C8FE /* AppDelegate.swift */; };
 		4F93FCC72244712F0015C8FE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F93FCC62244712F0015C8FE /* art.scnassets */; };
 		4F93FCC92244712F0015C8FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93FCC82244712F0015C8FE /* ViewController.swift */; };
-		4F93FCCC2244712F0015C8FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F93FCCA2244712F0015C8FE /* Main.storyboard */; };
 		4F93FCCE224471310015C8FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F93FCCD224471310015C8FE /* Assets.xcassets */; };
-		4F93FCD1224471310015C8FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F93FCCF224471310015C8FE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F06BD152248129F00138AE0 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smoke.png; path = Kayak/art.scnassets/smoke.png; sourceTree = "<group>"; };
+		4F5E6F9D2248146100C8C7C5 /* Spout.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; name = Spout.scnp; path = Kayak/art.scnassets/Spout.scnp; sourceTree = "<group>"; };
 		4F93FCC12244712F0015C8FE /* Kayak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kayak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F93FCC42244712F0015C8FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F93FCC62244712F0015C8FE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		4F93FCC82244712F0015C8FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4F93FCCB2244712F0015C8FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F93FCCD224471310015C8FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F93FCD0224471310015C8FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F93FCD2224471310015C8FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,6 +40,8 @@
 		4F93FCB82244712E0015C8FE = {
 			isa = PBXGroup;
 			children = (
+				4F5E6F9D2248146100C8C7C5 /* Spout.scnp */,
+				4F06BD152248129F00138AE0 /* smoke.png */,
 				4F93FCC32244712F0015C8FE /* Kayak */,
 				4F93FCC22244712F0015C8FE /* Products */,
 			);
@@ -59,9 +61,7 @@
 				4F93FCC42244712F0015C8FE /* AppDelegate.swift */,
 				4F93FCC62244712F0015C8FE /* art.scnassets */,
 				4F93FCC82244712F0015C8FE /* ViewController.swift */,
-				4F93FCCA2244712F0015C8FE /* Main.storyboard */,
 				4F93FCCD224471310015C8FE /* Assets.xcassets */,
-				4F93FCCF224471310015C8FE /* LaunchScreen.storyboard */,
 				4F93FCD2224471310015C8FE /* Info.plist */,
 			);
 			path = Kayak;
@@ -126,9 +126,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F93FCC72244712F0015C8FE /* art.scnassets in Resources */,
-				4F93FCD1224471310015C8FE /* LaunchScreen.storyboard in Resources */,
+				4F06BD172248129F00138AE0 /* smoke.png in Resources */,
 				4F93FCCE224471310015C8FE /* Assets.xcassets in Resources */,
-				4F93FCCC2244712F0015C8FE /* Main.storyboard in Resources */,
+				4F5E6F9E2248146100C8C7C5 /* Spout.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,25 +145,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4F93FCCA2244712F0015C8FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F93FCCB2244712F0015C8FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4F93FCCF224471310015C8FE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F93FCD0224471310015C8FE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4F93FCD3224471310015C8FE /* Debug */ = {
