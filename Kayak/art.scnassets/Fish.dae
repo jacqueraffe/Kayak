@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+<asset>
+<contributor>
+<author>Wings3D Collada Exporter</author>
+<authoring_tool>Wings3D 2.1.7 Collada Exporter</authoring_tool>
+<comments/>
+<copyright/>
+<source_data/>
+</contributor>
+<created>2019-03-24T04:19:30</created>
+<modified>2019-03-24T04:19:30</modified>
+<unit meter="0.01" name="centimeter"/>
+<up_axis>Y_UP</up_axis>
+</asset>
+<library_effects><effect id="default-fx" name="default-fx"><profile_COMMON><technique sid="wings3d"><phong><emission><color>0.000000 0.000000 0.000000 1.000000
+</color></emission><ambient><color>0.789854 0.813333 0.694044 1.000000
+</color></ambient><diffuse><color>0.789854 0.813333 0.694044 1.000000
+</color></diffuse><specular><color>0.000000 0.000000 0.000000 1.000000
+</color></specular><shininess><float>0.000000</float></shininess></phong></technique></profile_COMMON></effect></library_effects>
+
+<library_materials><material id="default" name="default"><instance_effect url="#default-fx"/></material></library_materials>
+<library_geometries><geometry name="Fish-0" id="Fish-0"><mesh><source id="Fish-0-Pos"><float_array id="Fish-0-Pos-array" count="33">-2.000000 0.000000 0.000000 -0.602844 1.101511 0.000000 -0.602844 -0.687289 0.000000 0.000000 0.000000 0.607786 0.000000 0.000000 -0.612053 1.663640 0.185252 0.000000 1.657299 0.000000 0.173239 1.636845 -0.124796 0.000000 1.657593 0.000000 -0.173821 2.851450 0.896021 0.000000 2.714279 -0.835565 0.000000</float_array><technique_common><accessor count="11" source="#Fish-0-Pos-array" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source><source id="Fish-0-Normal"><float_array id="Fish-0-Normal-array" count="33">-0.954916 -0.296861 0.002808 -0.054876 0.998492 0.001725 -0.056497 -0.998401 0.001710 -0.038501 -0.105514 0.993672 -0.038942 -0.105802 -0.993624 -0.129748 0.991546 0.001163 -0.078423 -0.065560 0.994762 -0.189373 -0.981905 0.001089 -0.078151 -0.065521 -0.994786 -0.343859 0.939021 0.000723 -0.396889 -0.917866 0.000540</float_array><technique_common><accessor count="11" source="#Fish-0-Normal-array" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source><vertices id="Fish-0-Vtx"><input semantic="POSITION" source="#Fish-0-Pos"/></vertices><polylist count="14" material="default"><input offset="0" semantic="VERTEX" source="#Fish-0-Vtx"/><input offset="1" semantic="NORMAL" source="#Fish-0-Normal"/><vcount>3 3 3 3 3 3 3 4 3 4 3 4 3 4</vcount><p>9 9 6 6 10 10 9 9 10 10 8 8 8 8 10 10 7 7 7 7 10 10 6 6 6 6 9 9 5 5 5 5 9 9 8 8 0 0 4 4 2 2 2 2 4 4 8 8 7 7 1 1 4 4 0 0 5 5 8 8 4 4 1 1 2 2 3 3 0 0 7 7 6 6 3 3 2 2 0 0 3 3 1 1 1 1 3 3 6 6 5 5</p></polylist></mesh></geometry></library_geometries>
+<library_visual_scenes><visual_scene id="Scene" name="Scene"><node layer="L1" id="Fish-0L1" name="Fish-0"><translate sid="translate">0.00000 0.00000 0.00000</translate>
+<rotate sid="rotateZ">0 0 1 0.00000</rotate><rotate sid="rotateY">0 1 0 0.00000</rotate><rotate sid="rotateX">1 0 0 0.00000</rotate><scale sid="scale">1.0000 1.0000 1.0000</scale><instance_geometry url="#Fish-0"><bind_material><technique_common><instance_material symbol="default" target="#default"><bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/></instance_material></technique_common></bind_material></instance_geometry></node></visual_scene></library_visual_scenes>
+<scene><instance_visual_scene url="#Scene"/></scene>
+</COLLADA>

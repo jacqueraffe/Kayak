@@ -30,9 +30,41 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/Kayak.dae")!
+        /*
+        let walrusHead = scene.rootNode.childNode(withName: "WalrusHead-0", recursively: true)!
+        let walrusBody = scene.rootNode.childNode(withName: "WalrusBody-0", recursively: true)!
+        let simdWalrusHeadPosition = walrusHead.simdPosition
+        let simdWalrusBodyPosition = walrusBody.simdPosition
+        let difference = simdWalrusHeadPosition - simdWalrusBodyPosition
+        walrusHead.simdPosition = difference
+        walrusBody.addChildNode(walrusHead)
+        let billboardConstraint = SCNBillboardConstraint()
+        billboardConstraint.freeAxes = .Y
+        //walrusHead.constraints = [billboardConstraint]
+        //let walrusHead2 = SCNNode()
+        //walrusHead2.simdPosition = walrusHead.simdPosition
+        let cameraNode = sceneView.pointOfView!
+        let lookAtConstraint = SCNLookAtConstraint( target: cameraNode)
+        lookAtConstraint.isGimbalLockEnabled = true
+        walrusHead.constraints = [lookAtConstraint]
+        */
         
+       
+        
+        
+    
         // Set the scene to the view
         sceneView.scene = scene
+        
+        let oceanSound = SCNAudioSource(fileNamed: "art.scnassets/OceanSounds.wav")!
+        oceanSound.loops = true
+        let audioPlayer1 = SCNAudioPlayer(source: oceanSound)
+        scene.rootNode.addAudioPlayer(audioPlayer1)
+        
+        let musicSound = SCNAudioSource(fileNamed: "art.scnassets/Music.wav")!
+        oceanSound.loops = true
+        let audioPlayer2 = SCNAudioPlayer(source: musicSound)
+        scene.rootNode.addAudioPlayer(audioPlayer2)
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -77,4 +109,25 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+   
+    
 }
+
+
+func updatePositionAndOrientationOf(_ node: SCNNode, withPosition position: SCNVector3,
+relativeTo referenceNode: SCNNode)
+{
+    let referenceNodeTransform = matrix_float4x4(referenceNode.transform)
+    
+    // Setup a translation matrix with the desired position
+    var translationMatrix = matrix_identity_float4x4
+    translationMatrix.columns.3.x = position.x
+    translationMatrix.columns.3.y = position.y
+    translationMatrix.columns.3.z = position.z
+    
+    // Combine the configured translation matrix with the referenceNode's transform to
+    //get the desired position AND orientation
+    let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
+    node.transform = SCNMatrix4(updatedTransform)
+}
+
