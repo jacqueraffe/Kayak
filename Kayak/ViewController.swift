@@ -37,17 +37,21 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/Kayak.dae")!
-
-        let fish = SCNScene(named: "art.scnassets/Fish.dae")!.rootNode
        
         let seagull = SCNScene(named: "art.scnassets/Seagull.dae")!.rootNode
+        let seagullParent = SCNNode()
         
-        scene.rootNode.addChildNode(seagull)
+        scene.rootNode.addChildNode(seagullParent)
         
-        scene.rootNode.addChildNode(fish)
+        seagullParent.addChildNode(seagull)
         
-        seagull.simdPosition = float3(1, 0, 1)
-        fish.simdPosition = float3(0, 0 , -6)
+        seagullParent.simdPosition = float3(-1, 1, -1)
+        seagull.simdPosition = float3(0, 0, 1)
+        
+        let rotationAction = SCNAction.rotate(by: -CGFloat.pi*2, around: SCNVector3(0, 1, 0), duration: 5)
+        let rotateForever = SCNAction.repeatForever(rotationAction)
+        
+        seagullParent.runAction(rotateForever)
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -71,7 +75,6 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
             let dolphinsound = SCNAudioSource(fileNamed: "art.scnassets/Dolphins.wav")!
             let audioPlayer3 = SCNAudioPlayer(source: dolphinsound)
             sceneView.scene.rootNode.addAudioPlayer(audioPlayer3)
-            print("sound played")
         }
         counter = counter + 1
 
@@ -122,25 +125,3 @@ public class ViewController: UIViewController, ARSCNViewDelegate {
    
     
 }
-
-
-func updatePositionAndOrientationOf(_ node: SCNNode, withPosition position: SCNVector3,
-relativeTo referenceNode: SCNNode)
-{
-    let referenceNodeTransform = matrix_float4x4(referenceNode.transform)
-    
-    // Setup a translation matrix with the desired position
-    var translationMatrix = matrix_identity_float4x4
-    translationMatrix.columns.3.x = position.x
-    translationMatrix.columns.3.y = position.y
-    translationMatrix.columns.3.z = position.z
-    
-    // Combine the configured translation matrix with the referenceNode's transform to
-    //get the desired position AND orientation
-    let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
-    node.transform = SCNMatrix4(updatedTransform)
-}
-
-
-
-
